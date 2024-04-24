@@ -47,7 +47,7 @@ const SearchForm = () => {
         <div className="relative">
           <input
             type="search"
-            placeholder="Search"
+            placeholder="Search Photos"
             ref={searchInput}
             className="w-full p-4 rounded-full bg-white outline-sky-200"
           />
