@@ -3,9 +3,17 @@ import { useState, useRef, useEffect } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 
+interface Image {
+  id: string;
+  urls: {
+    small: string;
+  };
+  alt_description: string;
+}
+
 const SearchForm = () => {
   const searchInput = useRef<HTMLInputElement>(null);
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<Image[]>([]); // Specify type as Image[]
   const [totalPages, setTotalPages] = useState(0);
 
   const fetchImages = async () => {
@@ -20,6 +28,7 @@ const SearchForm = () => {
       console.error("Error fetching images:", error);
     }
   };
+  console.log(totalPages);
 
   const handleSearch = (event: React.FormEvent) => {
     event.preventDefault();
